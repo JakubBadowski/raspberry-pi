@@ -10,7 +10,7 @@ gpio.setwarnings(False)
 gpio.setup(26,gpio.OUT)
 # GPIO.setup(3,GPIO.OUT)
 
-interwal = 3
+interwal = 0.1
 
 while True:
 	print('ON')
