@@ -32,11 +32,17 @@ class Gpio
 		$stan = [];
 
 		foreach ($this->colors as $color=>$nr) {
-
 			$stan[ $color ] = (int) shell_exec("gpio -g read " . (int) $nr );	
 		}
 
 		return $stan;
+	}
+
+	public function setMode()
+	{
+		foreach ($this->colors as $color=>$nr) {
+			shell_exec("gpio -g mode " . (int) $nr . " out");
+		}
 	}
 
 	private function setNr($nr)

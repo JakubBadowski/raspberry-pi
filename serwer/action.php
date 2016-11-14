@@ -14,7 +14,10 @@ if( $_SERVER['REQUEST_METHOD'] === 'POST' ) {
 	// sprawdzaj stan na początku
 	if (isset($_POST['check_state'])) {
 
+
 		$gpio = new Gpio($colors);
+		// ustaw piny na output
+		$gpio->setMode();
 		$stan = $gpio->getState();
 
 		header('Content-Type: application/json');
